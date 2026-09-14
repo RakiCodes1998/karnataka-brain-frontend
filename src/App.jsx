@@ -84,8 +84,15 @@ const questions = {
         },
         {
             question: "ಕೆಂಪೇಗೌಡ ಪ್ರಥಮರು ನಿರ್ಮಿಸಿದ್ದ ಐತಿಹಾಸಿಕ 'ಧರ್ಮಾಂಬುಧಿ ಕೆರೆ'ಯನ್ನು ಒಣಗಿಸಿ ನಂತರ ಬೆಂಗಳೂರಿನ ಯಾವ ಪ್ರಮುಖ ಸಾರಿಗೆ ಕೇಂದ್ರವಾಗಿ ಪರಿವರ್ತಿಸಲಾಯಿತು?(The historic 'Dharmambudhi Kere' (lake), built by Kempe Gowda I, was dried up and later transformed into which major transport hub in Bengaluru?)",
-            options: ["ಕ್ರಾಂತಿವೀರ ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ ರೈಲು ನಿಲ್ದಾಣ(Krantivira Sangolli Rayanna Railway Station)", "(Shantinagar Bus Station)", "(Kempegowda Bus Station (Majestic))", "(Yeshwantpur Junction)"],
-            answer: "(Kempegowda Bus Station (Majestic))"
+
+            options: [
+                "ಕ್ರಾಂತಿವೀರ ಸಂಗೊಳ್ಳಿ ರಾಯಣ್ಣ ರೈಲು ನಿಲ್ದಾಣ (Krantivira Sangolli Rayanna Railway Station)",
+                "ಶಾಂತಿನಗರ ಬಸ್ ನಿಲ್ದಾಣ (Shantinagar Bus Station)",
+                "ಕೆಂಪೇಗೌಡ ಬಸ್ ನಿಲ್ದಾಣ (ಮೆಜೆಸ್ಟಿಕ್) (Kempegowda Bus Station (Majestic))",
+                "ಯಶವಂತಪುರ ಜಂಕ್ಷನ್ (Yeshwantpur Junction)"
+            ],
+
+            answer: "ಕೆಂಪೇಗೌಡ ಬಸ್ ನಿಲ್ದಾಣ (ಮೆಜೆಸ್ಟಿಕ್) (Kempegowda Bus Station (Majestic))"
         },
         {
             question: "ಮದನಾಯಕನಹಳ್ಳಿ ಮತ್ತು ನೆಲಮಂಗಲದ ನಡುವೆ ಇರುವ ಯಾವ ಹೋಬಳಿ/ಕಂದಾಯ ವಲಯದ ವ್ಯಾಪ್ತಿಗೆ ಅಡಕಮಾರನಹಳ್ಳಿ ಗ್ರಾಮ ಬರುತ್ತದೆ?(Adakamaranahalli village falls under which Hobli/revenue circle located between Madanayakanahalli and Nelamangala?)",
@@ -974,7 +981,8 @@ function App() {
                         textAlign: "center"
                     }}
                 >
-                    <h1>Karnataka Brain</h1>
+                    <h1 className="brand-kannataka">ಕನ್ನಡನಾಡಿನ</h1>
+                    <h1 className="brand-brain">ಜ್ಞಾನ</h1>
 
                     <h2>
                         {authMode === "login"
@@ -1351,8 +1359,19 @@ function App() {
 
         {/* Header */}
         <header className="game-header">
-            <h1><strong>Karnataka Brain</strong></h1>
-            <p><strong>Test Your Karnataka Knowledge and begin your journey!!</strong></p>
+            <h1><strong>ಕನ್ನಡನಾಡಿನ ಜ್ಞಾನ(KARNATAKA BRAIN GAME)</strong></h1>
+            <p className="honesty-message">
+                <strong> ನಾವು ಕನ್ನಡಿಗರು, ವಿಶಾಲ ಹೃದಯದವರು. ❤️</strong>
+                <br />
+                <strong> ನಿಜವಾದ ಕನ್ನಡಿಗ ಯಾವಾಗಲೂ ಪ್ರಾಮಾಣಿಕತೆಯಿಂದ ಆಡುತ್ತಾನೆ.</strong>
+                <br />
+                <strong> ChatGPT ಬೇಡ. Google ಬೇಡ. Gemini ಬೇಡ. ಯಾವುದೇ AI ಬೇಡ. ಮೋಸ ಮಾಡಬೇಡಿ.</strong>
+                <br />
+                <strong> ನಿಮಗೆ ನಿಜವಾಗಿಯೂ ತಿಳಿದಿರುವುದನ್ನು ಮಾತ್ರ ಉತ್ತರಿಸಿ.</strong>
+                <br />
+                <strong> ನಿಮ್ಮ ಅಂಕಗಳು ನಿಮ್ಮ ಕರ್ನಾಟಕದ ಜ್ಞಾನವನ್ನು ಸಾಬೀತುಪಡಿಸಲಿ.</strong>
+            </p>
+            <p><strong>ನಿಮ್ಮ ಕರ್ನಾಟಕದ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಪಯಣವನ್ನು ಆರಂಭಿಸಿ. 🚀(Test Your Karnataka Knowledge and begin your journey!!)</strong></p>
         </header>
 
         {/* Karnataka Map */}

@@ -721,3 +721,221 @@ body {
 .play-again-button:active {
   transform: translateY(0);
 }
+/* ============================= */
+/* KANNADA BRAND TITLE */
+/* ============================= */
+
+.brand-kannataka {
+  margin: 0;
+  padding: 0;
+
+  font-size: 42px;
+  font-weight: 800;
+  line-height: 1.15;
+
+  text-align: center;
+}
+
+
+/* ============================= */
+/* KNOWLEDGE / BRAIN TITLE */
+/* ============================= */
+
+.brand-brain {
+  margin: 12px 0 24px;
+  padding: 0;
+
+  font-size: 42px;
+  font-weight: 900;
+  line-height: 1.15;
+
+  text-align: center;
+}
+
+
+/* ============================= */
+/* MOBILE */
+/* ============================= */
+
+@media (max-width: 600px) {
+
+  .brand-kannataka {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .brand-brain {
+    margin: 8px 0 20px;
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+}
+
+
+/* ============================= */
+/* VERY SMALL PHONES */
+/* ============================= */
+
+@media (max-width: 380px) {
+
+  .brand-kannataka {
+    font-size: 27px;
+  }
+
+  .brand-brain {
+    font-size: 27px;
+    margin-top: 6px;
+  }
+
+}
+
+/* =========================================
+   FINAL SCREEN - MOBILE RESPONSIVE FIX
+   ========================================= */
+
+.final-character {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+}
+
+
+/* MOBILE PHONES */
+@media (max-width: 768px) {
+
+  .final-screen {
+    width: 100%;
+    min-height: 100vh;
+    height: auto;
+
+    padding: 20px 15px;
+    box-sizing: border-box;
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .final-content {
+    width: 100%;
+    max-width: 500px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    gap: 25px;
+  }
+
+  /* Rajkumar section */
+  .final-left {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+  }
+
+  /* Rajkumar image */
+  .final-character {
+    display: block;
+
+    width: 85%;
+    max-width: 360px;
+
+    height: auto;
+    max-height: 48vh;
+
+    object-fit: contain;
+    object-position: center;
+
+    margin: 0 auto 15px auto;
+  }
+
+  /* Congratulations text */
+  .final-message {
+    width: 100%;
+    text-align: center;
+  }
+
+  .final-message h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+
+  .final-message h2 {
+    font-size: 20px;
+    line-height: 1.4;
+  }
+
+  .final-message p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Score section */
+  .final-score-section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .score-card {
+    width: 100%;
+    max-width: 430px;
+    box-sizing: border-box;
+  }
+
+  .play-again-button {
+    width: 100%;
+    max-width: 300px;
+    margin-top: 10px;
+  }
+}
+
+
+/* SMALL MOBILE PHONES */
+@media (max-width: 480px) {
+
+  .final-screen {
+    padding: 15px 10px;
+  }
+
+  .final-content {
+    gap: 18px;
+  }
+
+  .final-character {
+    width: 90%;
+    max-width: 320px;
+    max-height: 42vh;
+  }
+
+  .final-message h1 {
+    font-size: 24px;
+  }
+
+  .final-message h2 {
+    font-size: 18px;
+  }
+
+  .final-message p {
+    font-size: 14px;
+  }
+
+  .score-card {
+    padding: 18px 15px;
+  }
+}
