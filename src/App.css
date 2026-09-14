@@ -1,0 +1,723 @@
+
+/* ------------------------------
+   RESET
+------------------------------ */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+/* ------------------------------
+   PAGE
+------------------------------ */
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f5f5f5;
+  color: #222;
+}
+
+
+/* ------------------------------
+   MAIN GAME
+------------------------------ */
+
+.game {
+  min-height: 100vh;
+  width: 100%;
+  text-align: center;
+  overflow-x: hidden;
+}
+
+
+/* ------------------------------
+   HEADER
+------------------------------ */
+
+.game-header {
+  padding: 25px 10px 10px;
+}
+
+.game-header h1 {
+  font-size: 34px;
+  font-weight: 700;
+  color: #222;
+  margin-bottom: 5px;
+}
+
+.game-header p {
+  font-size: 17px;
+  color: #666;
+}
+
+
+/* ------------------------------
+   MAP SECTION
+------------------------------ */
+
+.map-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+
+/* ------------------------------
+   MAP CONTAINER
+------------------------------ */
+
+.map-container {
+  position: relative;
+
+  width: min(650px, 90vw);
+
+  margin: 20px auto 0;
+
+  display: flex;
+  justify-content: center;
+}
+
+
+/* ------------------------------
+   KARNATAKA MAP
+------------------------------ */
+
+.karnataka-map {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+
+}
+
+
+/* ------------------------------
+   REGION LABEL COMMON STYLE
+------------------------------ */
+
+.region-label {
+  position: absolute;
+
+  transform: translate(-50%, -50%);
+
+  min-width: 145px;
+
+  padding: 10px 14px;
+
+  background: rgba(255, 255, 255, 0.90);
+
+  border: 2px solid #333;
+
+  border-radius: 10px;
+
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  z-index: 5;
+}
+
+
+/* Region number */
+
+.region-label strong {
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+
+/* Kannada */
+
+.region-label span {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+
+/* English */
+
+.region-label small {
+  font-size: 12px;
+  margin-top: 2px;
+}
+
+
+/* ------------------------------
+   REGION 4
+   NORTH KARNATAKA
+------------------------------ */
+
+.region-4 {
+  top: 22%;
+  left: 56%;
+}
+
+
+/* ------------------------------
+   REGION 3
+   COASTAL KARNATAKA
+------------------------------ */
+
+.region-3 {
+  top: 47%;
+  left: 24%;
+}
+
+
+/* ------------------------------
+   REGION 2
+   WESTERN GHATS
+------------------------------ */
+
+.region-2 {
+  top: 52%;
+  left: 43%;
+}
+
+
+/* ------------------------------
+   REGION 1
+   OLD MYSORE
+------------------------------ */
+
+.region-1 {
+  top: 75%;
+  left: 57%;
+}
+
+
+/* ------------------------------
+   CHARACTER
+------------------------------ */
+
+.character {
+  position: absolute;
+
+  width: 90px;
+  height: auto;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 10;
+
+  transition: top 0.8s ease, left 0.8s ease;
+}
+
+
+/* REGION 1 - OLD MYSORE */
+.character-region-1 {
+  top: 75%;
+  left: 57%;
+}
+
+
+/* REGION 2 - WESTERN GHATS */
+.character-region-2 {
+  top: 52%;
+  left: 43%;
+}
+
+
+/* REGION 3 - COASTAL KARNATAKA */
+.character-region-3 {
+  top: 47%;
+  left: 24%;
+}
+
+
+/* REGION 4 - NORTH KARNATAKA */
+.character-region-4 {
+  top: 22%;
+  left: 56%;
+}
+
+
+/* ------------------------------
+   GAME STATUS
+------------------------------ */
+
+.game-status {
+  width: 800px;
+  max-width: 90%;
+
+  padding: 28px 30px;
+
+  background: #1e293b;
+
+  border: 1px solid #334155;
+  border-radius: 16px;
+
+  text-align: center;
+
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.game-status h2 {
+  margin: 0 0 12px;
+
+  color: white;
+
+  font-size: 38px;
+  font-weight: 700;
+}
+
+.game-status p {
+  margin: 0 0 25px;
+
+  color: #cbd5e1;
+
+  font-size: 20px;
+}
+
+.game-status p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+
+/* ------------------------------
+   START BUTTON
+------------------------------ */
+
+.start-button {
+  border: none;
+
+  padding: 18px 55px;
+
+  border-radius: 10px;
+
+  background: #facc15;
+  color: #111827;
+
+  font-size: 22px;
+  font-weight: 700;
+
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  transition: 0.2s ease;
+}
+
+.start-button:hover {
+  background: #fde047;
+  transform: translateY(-2px);
+}
+.start-button:active{
+  transform: translateY(0);
+}
+
+
+/* ------------------------------
+   MOBILE
+------------------------------ */
+
+@media (max-width: 600px) {
+
+  .game-header h1 {
+    font-size: 28px;
+  }
+
+  .game-header p {
+    font-size: 14px;
+  }
+
+  .region-label {
+    min-width: 110px;
+    padding: 7px 9px;
+  }
+
+  .region-label strong {
+    font-size: 11px;
+  }
+
+  .region-label span {
+    font-size: 12px;
+  }
+
+  .region-label small {
+    font-size: 9px;
+  }
+
+  .character {
+    width: 90px;
+  }
+}
+
+
+.quiz-screen {
+  background-color: #ffffff;
+  color: #111111;
+  padding: 30px;
+  border-radius: 20px;
+  max-width: 700px;
+  margin: 30px auto;
+  text-align: center;
+}
+
+.quiz-screen h2 {
+  color: #111111;
+}
+
+.quiz-screen p {
+  color: #555555;
+}
+
+.quiz-screen h3 {
+  color: #111111;
+  font-size: 20px;
+  line-height: 1.5;
+  margin: 25px 0;
+}
+
+.answer-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.answer-buttons button {
+  background-color: #f5c400;
+  color: #111111;
+  border: none;
+  padding: 14px 18px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.answer-buttons button:hover {
+  background-color: #e0ae00;
+}
+/* RESULT POPUP */
+
+.result-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.65);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 1000;
+}
+
+.result-popup {
+  width: min(450px, 85vw);
+
+  background: #ffffff;
+
+  padding: 35px;
+
+  border-radius: 20px;
+
+  text-align: center;
+
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.35);
+}
+
+.result-popup h2 {
+  margin-top: 0;
+  color: #1e293b;
+  font-size: 28px;
+}
+
+.result-popup p {
+  color: #475569;
+  font-size: 18px;
+  line-height: 1.5;
+}
+
+.result-popup strong {
+  color: #111827;
+}
+
+.result-popup button {
+  margin-top: 20px;
+
+  padding: 14px 35px;
+
+  background: #f5c400;
+  color: #111111;
+
+  border: none;
+  border-radius: 10px;
+
+  font-size: 17px;
+  font-weight: bold;
+
+  cursor: pointer;
+}
+
+.result-popup button:hover {
+  background: #e0ae00;
+}
+
+
+
+/* ============================= */
+/* FINAL COMPLETION SCREEN */
+/* ============================= */
+.final-screen {
+  width: 100%;
+  height: 100vh;
+  min-height: 100vh;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  padding: 40px;
+
+  background: linear-gradient(
+          135deg,
+          #ffffff 0%,
+          #fffdf5 100%
+  );
+
+  overflow: visible;
+}
+
+
+/* MAIN TWO-SIDE LAYOUT */
+
+.final-content {
+  width: 100%;
+  max-width: 1200px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: 60px;
+}
+
+
+/* LEFT SIDE */
+
+.final-left {
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  text-align: center;
+}
+
+
+/* RAJKUMAR IMAGE */
+
+.final-character {
+  height: 70vh !important;
+  width: auto !important;
+
+  max-width: 45vw !important;
+  max-height: 70vh !important;
+
+  object-fit: contain;
+
+  display: block;
+
+  filter: drop-shadow(
+          0 8px 18px rgba(0, 0, 0, 0.20)
+  );
+}
+
+
+/* CONGRATULATIONS AREA */
+
+.final-message {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.final-message h1 {
+  margin: 0;
+
+  font-size: 34px;
+  font-weight: 800;
+
+  letter-spacing: 1px;
+}
+
+.final-message h2 {
+  margin: 6px 0;
+
+  font-size: 22px;
+}
+
+.final-message p {
+  margin: 5px 0;
+
+  font-size: 15px;
+}
+
+
+/* RIGHT SIDE SCORE */
+
+.final-score-section {
+  flex: 0 0 430px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* SCORE CARD */
+
+.score-card {
+  width: 100%;
+
+  box-sizing: border-box;
+
+  padding: 28px 30px;
+
+  border-radius: 20px;
+
+  background: rgba(255, 255, 255, 0.95);
+
+  box-shadow:
+          0 12px 35px rgba(0, 0, 0, 0.15);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+.score-card h3 {
+  margin: 0 0 22px;
+
+  text-align: center;
+
+  font-size: 25px;
+
+  letter-spacing: 1px;
+}
+
+
+/* EACH REGION */
+
+.region-score {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  gap: 25px;
+
+  padding: 13px 5px;
+
+  border-bottom: 1px solid #eeeeee;
+
+  font-size: 16px;
+}
+
+
+.region-score span {
+  flex: 1;
+
+  text-align: left;
+
+  white-space: nowrap;
+}
+
+
+.region-score strong {
+  min-width: 80px;
+
+  text-align: right;
+
+  font-size: 17px;
+}
+
+
+/* TOTAL */
+
+.total-score {
+  display: flex;
+
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 18px;
+
+  padding: 17px 8px;
+
+  border-radius: 12px;
+
+  background: #fff4c2;
+
+  font-size: 20px;
+  font-weight: 800;
+}
+
+
+.total-score strong {
+  font-size: 23px;
+}
+
+
+/* MODERN PLAY AGAIN BUTTON */
+
+.play-again-button {
+  margin-top: 25px;
+
+  padding: 13px 32px;
+
+  border: none;
+
+  border-radius: 30px;
+
+  background: linear-gradient(
+          135deg,
+          #f5b700,
+          #ffcc33
+  );
+
+  color: #222;
+
+  font-size: 16px;
+
+  font-weight: 700;
+
+  letter-spacing: 0.5px;
+
+  cursor: pointer;
+
+  box-shadow:
+          0 6px 18px rgba(0, 0, 0, 0.18);
+
+  transition:
+          transform 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+
+.play-again-button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+          0 10px 24px rgba(0, 0, 0, 0.22);
+}
+
+
+.play-again-button:active {
+  transform: translateY(0);
+}
