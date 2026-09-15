@@ -1289,7 +1289,7 @@ function App() {
                         <p>{result.message}</p>
 
                         <button
-                            onClick={() => {
+                            onClick={async() => {
                                 setResult(null);
 
                                 if (result.success) {
@@ -1305,7 +1305,9 @@ function App() {
                                             4: result.score
                                         };
 
-                                        saveGameScore(finalRegionScores);
+                                       await saveGameScore(finalRegionScores);
+                                       await fetchGameHistory(user.id);
+
 
                                         // STOP REGION 4 MUSIC
                                         if (musicRef.current) {
