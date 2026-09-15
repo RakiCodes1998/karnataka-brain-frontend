@@ -1406,7 +1406,7 @@ function App() {
                         <h2>Region {currentRegion}</h2>
 
                         <p>
-                            Test your Karnataka knowledge and begin your journey!
+                            Answer at least 5 questions correctly to proceed to the next region
                         </p>
 
 
