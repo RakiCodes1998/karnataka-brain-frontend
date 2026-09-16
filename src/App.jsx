@@ -710,6 +710,8 @@ function App() {
     const [gameUnlocked, setGameUnlocked] = useState(false);
     const [result, setResult] = useState(null);
     const [gameCompleted, setGameCompleted] = useState(false);
+    const [selectedAnswer, setSelectedAnswer] = useState(null);
+    const [showAnswerResult, setShowAnswerResult] = useState(false);
     const [regionScores, setRegionScores] = useState({
         1: 0,
         2: 0,
@@ -918,7 +920,27 @@ function App() {
         playMusic(regionSongs[currentRegion])
     };
 
+    const handleOptionClick = (option) => {
+        // Prevent clicking more than once
+        if (showAnswerResult) return;
 
+        const currentQuestion = quizQuestions[questionNumber];
+
+        const isCorrect = option === currentQuestion.answer;
+
+        // Remember which option user clicked
+        setSelectedAnswer(option);
+        setShowAnswerResult(true);
+
+        // Give time to show GREEN / RED
+        setTimeout(() => {
+            answerQuestion(isCorrect);
+
+            // Reset answer highlight
+            setSelectedAnswer(null);
+            setShowAnswerResult(false);
+        }, 700);
+    };
 
     const answerQuestion = (isCorrect) => {
         const finalScore = isCorrect ? score + 1 : score;
@@ -1445,21 +1467,38 @@ function App() {
                         <h3>
                             {quizQuestions[questionNumber].question}
                         </h3>
-
                         <div className="answer-buttons">
 
-                            {quizQuestions[questionNumber].options.map((option) => (
+                            {quizQuestions[questionNumber].options.map((option) => {
 
-                                <button
-                                    key={option}
-                                    onClick={() => answerQuestion(
-                                        option === quizQuestions[questionNumber].answer
-                                    )}
-                                >
-                                    {option}
-                                </button>
+                                const isSelected = option === selectedAnswer;
+                                const isCorrect = option === quizQuestions[questionNumber].answer;
 
-                            ))}
+                                let answerClass = "";
+
+                                if (showAnswerResult && isSelected) {
+                                    answerClass = isCorrect ? "correct-answer" : "wrong-answer";
+                                }
+
+                                return (
+                                    <button
+                                        key={option}
+                                        className={answerClass}
+                                        onClick={() => handleOptionClick(option)}
+                                        disabled={showAnswerResult}
+                                    >
+                                        {option}
+
+                                        {showAnswerResult && isSelected && isCorrect && (
+                                            <span className="answer-icon">✓</span>
+                                        )}
+
+                                        {showAnswerResult && isSelected && !isCorrect && (
+                                            <span className="answer-icon">✕</span>
+                                        )}
+                                    </button>
+                                );
+                            })}
 
                         </div>
 

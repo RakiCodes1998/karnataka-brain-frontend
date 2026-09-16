@@ -939,3 +939,49 @@ body {
     padding: 18px 15px;
   }
 }
+/* Correct answer */
+.answer-buttons button.correct-answer {
+  background-color: #28a745 !important;
+  color: white !important;
+}
+
+/* Wrong answer */
+.answer-buttons button.wrong-answer {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+
+/* Check / Cross icon */
+.answer-icon {
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Mobile answer buttons */
+@media (max-width: 600px) {
+
+  .answer-buttons button {
+    width: 100%;
+    min-height: 50px;
+    padding: 12px 14px;
+    font-size: 15px;
+    line-height: 1.4;
+    box-sizing: border-box;
+  }
+
+  .answer-buttons button.correct-answer {
+    background-color: #28a745 !important;
+    color: white !important;
+  }
+
+  .answer-buttons button.wrong-answer {
+    background-color: #dc3545 !important;
+    color: white !important;
+  }
+
+  .answer-icon {
+    margin-left: 8px;
+    font-size: 17px;
+  }
+}
