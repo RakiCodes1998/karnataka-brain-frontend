@@ -1005,3 +1005,381 @@ body {
   }
 }
 
+/* =========================================================
+   KARNATAKA BRAIN - FULL PAGE BACKGROUND
+   ========================================================= */
+
+/* Make the browser itself use the same background */
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  background: #061633;
+}
+
+
+/* =========================================================
+   ENTIRE GAME BACKGROUND
+   ========================================================= */
+
+.game {
+  position: relative;
+
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+
+  box-sizing: border-box;
+
+  /*
+     IMPORTANT:
+     Remove any previous background from .game
+     so our image can be seen.
+  */
+  background-color: #061633 !important;
+
+  background-image: url("./assets/karnataka-background.png") !important;
+
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+
+  /*
+     Keeps the background visually fixed
+     while the game content scrolls.
+  */
+  background-attachment: fixed;
+
+  /*
+     Keeps your existing content above the background.
+  */
+  isolation: isolate;
+
+  overflow-x: hidden;
+}
+
+
+/* =========================================================
+   REMOVE OLD CSS DECORATIONS
+   The new background image already contains the pattern.
+   ========================================================= */
+
+.game::before,
+.game::after {
+  display: none !important;
+}
+
+
+/* =========================================================
+   KEEP ALL YOUR EXISTING GAME CONTENT ABOVE THE IMAGE
+   ========================================================= */
+
+.game > * {
+  position: relative;
+  z-index: 1;
+}
+
+
+/* =========================================================
+   IMPORTANT:
+   DO NOT CHANGE YOUR MAP OR CHARACTER
+   ========================================================= */
+
+.karnataka-map,
+.character {
+  /* No size changes */
+  /* No position changes */
+  /* No filter changes */
+}
+
+
+/* =========================================================
+   MAP CONTAINER
+   Keep your existing map appearance.
+   Only make sure it doesn't cover the whole background.
+   ========================================================= */
+
+.map-container {
+  position: relative;
+  z-index: 2;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+  .game {
+    min-height: 100vh;
+    min-height: 100dvh;
+
+    background-size: cover;
+    background-position: center center;
+
+    /*
+       Fixed backgrounds can behave differently
+       on mobile browsers, so use scroll.
+    */
+    background-attachment: scroll;
+  }
+}
+
+
+/* =========================================================
+   SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .game {
+    background-position: center center;
+  }
+}
+/* =========================================================
+   READABLE INTRO / HEADER TEXT
+   ========================================================= */
+
+/* Main Karnataka Brain title */
+.game > h1 {
+  color: #ffd54a !important;
+
+  text-shadow:
+          0 2px 8px rgba(0, 0, 0, 0.75),
+          0 0 18px rgba(255, 213, 74, 0.18);
+}
+
+
+/* Introduction text directly under the title */
+.game > p {
+  color: #f5f7ff !important;
+
+  text-shadow:
+          0 2px 6px rgba(0, 0, 0, 0.85);
+
+  opacity: 1 !important;
+}
+
+
+/* If your introduction is inside another container */
+.game > div > p {
+  color: #f5f7ff !important;
+
+  text-shadow:
+          0 2px 6px rgba(0, 0, 0, 0.85);
+
+  opacity: 1 !important;
+}
+
+
+/* Gold emphasis */
+.game > h1 strong,
+.game > h1 b {
+  color: #ffd54a !important;
+}
+
+
+/* =========================================================
+   KARNATAKA BRAIN HEADER - READABLE COLORS
+   ========================================================= */
+
+/* Main title */
+.game-header h1 {
+  color: #FFD43B !important;
+
+  text-shadow:
+          0 2px 6px rgba(0, 0, 0, 0.85),
+          0 0 14px rgba(255, 212, 59, 0.18);
+}
+
+
+/* The strong text inside the title */
+.game-header h1 strong {
+  color: #FFD43B !important;
+}
+
+
+/* Kannada + English honesty/instruction text */
+.game-header .honesty-message {
+  color: #F4F7FF !important;
+
+  text-shadow:
+          0 2px 6px rgba(0, 0, 0, 0.9);
+
+  opacity: 1 !important;
+}
+
+
+/* Every strong line inside the honesty message */
+.game-header .honesty-message strong {
+  color: #F4F7FF !important;
+}
+
+
+/* Keep the heart and rocket naturally visible */
+.game-header .honesty-message {
+  line-height: 1.55;
+}
+
+/* =========================================================
+   BUILT BY RAKESH - PERMANENT CREDIT
+   ========================================================= */
+
+.built-by {
+  position: fixed !important;
+
+  right: 18px !important;
+  bottom: 12px !important;
+
+  color: #ffffff !important;
+
+  font-size: 13px !important;
+  font-weight: 800 !important;
+
+  letter-spacing: 0.3px;
+
+  text-align: right;
+
+  text-shadow:
+          0 2px 5px rgba(0, 0, 0, 0.95),
+          0 0 8px rgba(0, 0, 0, 0.75);
+
+  z-index: 99999 !important;
+
+  pointer-events: none;
+
+  white-space: nowrap;
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .built-by {
+    right: 10px !important;
+    bottom: 7px !important;
+
+    font-size: 11px !important;
+    font-weight: 800 !important;
+  }
+}
+/* =========================================================
+   MUSIC PLAY / PAUSE BUTTON
+   ========================================================= */
+
+.music-toggle {
+  position: fixed !important;
+
+  top: 18px !important;
+  right: 20px !important;
+
+  z-index: 99999 !important;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(255, 212, 59, 0.55);
+  border-radius: 999px;
+
+  background: rgba(5, 18, 42, 0.92);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+          0 4px 15px rgba(0, 0, 0, 0.45),
+          0 0 10px rgba(255, 212, 59, 0.12);
+
+  backdrop-filter: blur(8px);
+
+  transition:
+          transform 0.2s ease,
+          background 0.2s ease,
+          box-shadow 0.2s ease;
+}
+
+.music-toggle:hover {
+  transform: translateY(-2px);
+
+  background: rgba(15, 35, 70, 0.97);
+
+  box-shadow:
+          0 6px 20px rgba(0, 0, 0, 0.5),
+          0 0 15px rgba(255, 212, 59, 0.18);
+}
+
+.music-toggle:active {
+  transform: scale(0.96);
+}
+
+
+/* Mobile */
+@media (max-width: 768px) {
+  .music-toggle {
+    top: 10px !important;
+    right: 10px !important;
+
+    padding: 8px 12px;
+
+    font-size: 11px;
+  }
+}
+
+
+/* MUSIC TOGGLE BUTTON */
+
+.music-toggle {
+  position: fixed !important;
+  top: 18px !important;
+  right: 20px !important;
+
+  z-index: 99999 !important;
+
+  padding: 9px 15px;
+
+  border: 1px solid rgba(255, 212, 59, 0.55);
+  border-radius: 999px;
+
+  background: rgba(5, 18, 42, 0.92);
+
+  color: #ffffff;
+
+  font-size: 13px;
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+          0 4px 15px rgba(0, 0, 0, 0.45),
+          0 0 10px rgba(255, 212, 59, 0.12);
+
+  backdrop-filter: blur(8px);
+}
+
+.music-toggle:hover {
+  background: rgba(15, 35, 70, 0.97);
+}
+
+.music-toggle:active {
+  transform: scale(0.96);
+}
+
+
+/* MOBILE */
+
+@media (max-width: 768px) {
+  .music-toggle {
+    top: 10px !important;
+    right: 10px !important;
+
+    padding: 8px 12px;
+
+    font-size: 11px;
+  }
+}

@@ -696,6 +696,8 @@ function App() {
 
     const [gameHistory, setGameHistory] = useState([]);
 
+    const [isMusicPlaying, setIsMusicPlaying] = useState(true);
+
 
     const [authMode, setAuthMode] = useState("login");
     const [authName, setAuthName] = useState("");
@@ -719,6 +721,24 @@ function App() {
         4: 0
     });
     const musicRef = useRef(null);
+
+    const toggleMusic = () => {
+        if (!musicRef.current) return;
+
+        if (musicRef.current.paused) {
+            musicRef.current
+                .play()
+                .then(() => {
+                    setIsMusicPlaying(true);
+                })
+                .catch((error) => {
+                    console.error("Music failed to play:", error);
+                });
+        } else {
+            musicRef.current.pause();
+            setIsMusicPlaying(false);
+        }
+    };
 
     const regionSongs = {
         1: region1Song,
@@ -1294,7 +1314,23 @@ function App() {
 
 
     return (
-        <div className="game">
+
+
+            <div className="game">
+
+                {gameStarted && (
+                    <button
+                        className="music-toggle"
+                        onClick={toggleMusic}
+                        type="button"
+                        aria-label={isMusicPlaying ? "Pause music" : "Play music"}
+                    >
+                        {isMusicPlaying ? "🔊 Music" : "🔇 Music"}
+                    </button>
+                )}
+
+                {/* Header */}
+                <header className="game-header">
 
             {result && (
                 <div className="result-overlay">
@@ -1393,12 +1429,12 @@ function App() {
                 <br />
                 <strong> ನಿಮಗೆ ನಿಜವಾಗಿಯೂ ತಿಳಿದಿರುವುದನ್ನು ಮಾತ್ರ ಉತ್ತರಿಸಿ.</strong>
                 <br />
-                <strong> ನಿಮ್ಮ ಅಂಕಗಳು ನಿಮ್ಮ ಕರ್ನಾಟಕದ ಜ್ಞಾನವನ್ನು ಸಾಬೀತುಪಡಿಸಲಿ.</strong>
+                <strong> ನಿಮ್ಮ ಅಂಕಗಳು ನಿಮ್ಮ ಕರ್ನಾಟಕದ ಜ್ಞಾನವನ್ನು ಸಾಬೀತುಪಡಿಸಲಿ.ನಿಮ್ಮ ಕರ್ನಾಟಕದ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಪಯಣವನ್ನು ಆರಂಭಿಸಿ. 🚀(Test Your Karnataka Knowledge and begin your journey!!)</strong>
             </p>
-            <p><strong>ನಿಮ್ಮ ಕರ್ನಾಟಕದ ಜ್ಞಾನವನ್ನು ಪರೀಕ್ಷಿಸಿ ಮತ್ತು ನಿಮ್ಮ ಪಯಣವನ್ನು ಆರಂಭಿಸಿ. 🚀(Test Your Karnataka Knowledge and begin your journey!!)</strong></p>
         </header>
 
         {/* Karnataka Map */}
+
         <main className="map-section">
 
           <div className="map-container">
@@ -1421,6 +1457,7 @@ function App() {
 
 
           </div>
+
 
             {/* Game Status */}
             <div className="game-status">
@@ -1516,9 +1553,14 @@ function App() {
             </div>
 
 
-        </main>
+
+            </main>
+
+                </header>
 <div className="built-by">Built by Rakesh Shetty * <b>2026</b></div>
       </div>
+
+
   );
 }
 
