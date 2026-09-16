@@ -985,3 +985,23 @@ body {
     font-size: 17px;
   }
 }
+
+.built-by {
+  position: fixed;
+  right: 15px;
+  bottom: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.55);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .built-by {
+    right: 10px;
+    bottom: 6px;
+    font-size: 10px;
+  }
+}
+

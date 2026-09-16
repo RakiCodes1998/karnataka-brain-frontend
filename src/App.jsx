@@ -1517,7 +1517,7 @@ function App() {
 
 
         </main>
-
+<div className="built-by">Built by Rakesh Shetty * <b>2026</b></div>
       </div>
   );
 }
